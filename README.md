@@ -1,73 +1,89 @@
-# React + TypeScript + Vite
+# 📦 React Practice App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React 핵심 개념(ref, Context API 등)을 학습하며 구현한 실습 프로젝트입니다.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# 🚀 프로젝트 소개
 
-## React Compiler
+이 프로젝트는 React의 주요 개념을 직접 구현하며 학습하기 위한 목적의 프로젝트입니다.
+기능별로 컴포넌트를 분리하여 구조와 데이터 흐름을 이해하는 데 중점을 두었습니다.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# 🛠️ 기술 스택
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```txt
+React
+Vite
+JavaScript (ES6+)
+CSS
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# 📚 학습 내용
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ✔ Ref
+
+* useRef를 활용한 DOM 접근
+* dialog 요소 제어
+
+## ✔ Context API
+
+* 전역 상태 관리
+* Provider / useContext 구조
+
+👉 이후 추가 예정:
+
+```txt
+- Hooks 심화
+- 상태 관리 라이브러리
+- API 연동
+```
+
+---
+
+# ⚠️ 트러블슈팅 (요약)
+
+```txt
+- createPortal: DOM 요소 미존재 → container 추가로 해결
+- Hook 규칙 위반 → 최상단 호출로 수정
+- CSS 경로 오류 → import 경로 수정
+```
+
+👉 상세 내용은 추후 docs로 분리 예정
+
+---
+
+# 📂 폴더 구조
+
+```txt
+src/
+  components/
+    ref/
+    context/
+    ...
+```
+
+👉 기능(개념) 단위로 컴포넌트 구성
+👉 학습 내용에 따라 계속 확장 예정
+
+---
+
+# ▶️ 실행 방법
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
+# 💡 프로젝트 특징
+
+```txt
+- 인강 기반 학습 프로젝트
+- 개념 단위로 컴포넌트 분리
+- 확장 가능한 구조로 설계
 ```
