@@ -21,6 +21,11 @@ const FEATURE_REGISTRY = [
   },
 ];
 
+const FEATURE_COMPONENTS = FEATURE_REGISTRY.reduce((acc, feature) => {
+  acc[feature.id] = lazy(feature.loader);
+  return acc;
+}, {});
+
 function App() {
   const [selectedId, setSelectedId] = useState(FEATURE_REGISTRY[0].id);
 
