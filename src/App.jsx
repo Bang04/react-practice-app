@@ -34,7 +34,10 @@ function App() {
     [selectedId]
   );
 
-  const SelectedFeatureComponent = FEATURE_COMPONENTS[selectedFeature.id];
+  const SelectedFeatureComponent = useMemo(
+    () => lazy(selectedFeature.loader),
+    [selectedFeature]
+  );
 
   return (
     <div>
