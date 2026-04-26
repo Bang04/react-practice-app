@@ -38,9 +38,6 @@ function App() {
     <div>
       <header style={{ padding: '1rem 1.25rem', borderBottom: '1px solid #d5d9e2' }}>
         <h1 style={{ margin: '0 0 0.5rem', fontSize: '1.3rem' }}>React 핵심 기능 통합 연습장</h1>
-        <p style={{ margin: 0, color: '#4b5563' }}>
-          기능이 많아져도 구조를 유지할 수 있도록 레지스트리 기반 + 지연 로딩으로 구성했습니다.
-        </p>
       </header>
 
       <section style={{ padding: '1rem 1.25rem 0.6rem' }}>
