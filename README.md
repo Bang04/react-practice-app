@@ -14,17 +14,19 @@
 
 - `src/App.jsx`의 `FEATURE_REGISTRY`에 항목만 추가하면 기능 메뉴가 자동 확장됩니다.
 - 각 기능은 `lazy(() => import(...))`로 지연 로딩되어, 처음부터 모든 CSS/이미지/JS를 한 번에 로드하지 않습니다.
-- 기능별 폴더(`src/components/<feature>/`)에 CSS/이미지를 함께 두고, 해당 기능 컴포넌트에서 import하면 청크 단위로 관리됩니다.
+- 기능별 폴더(`src/features/<feature>/`)에 CSS/이미지를 함께 두고, 해당 기능 컴포넌트에서 import하면 청크 단위로 관리됩니다.
 
 ## 폴더 구조
 
 ```txt
 src/
   App.jsx                         # 레지스트리 + 기능 선택 + lazy 로딩
-  components/
-    ref/                          # useRef 실습
+  features/
+    custom-hook/                  # Custom Hook 실습
     context/                      # Context API 실습
+    ref/                          # useRef 실습
     performance/                  # 렌더링 최적화 실습
+    http-requests/                # HTTP 요청 실습
 ```
 
 ## 실행
