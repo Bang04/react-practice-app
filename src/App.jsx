@@ -1,6 +1,12 @@
 import { lazy, Suspense, useMemo, useState } from 'react';
 
 const FEATURE_REGISTRY = [
+   {
+    id: 'hook',
+    label: 'Custom Hook',
+    description: '',
+    loader: () => import('./course-exercises/custom-hook/HookApp.jsx'),
+  },
   {
     id: 'context',
     label: 'Context API 쇼핑카트',
