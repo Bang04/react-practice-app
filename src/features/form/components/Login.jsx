@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
-import React, { useState } from "react";
+import React, { useState, useRef} from "react";
 export default function Login() {
+
+  const [emailIsInvalid,  setEmailIsInvalid] = useState(false);
   const email = useRef();
   const password = useRef();
 
@@ -10,10 +12,16 @@ export default function Login() {
     const enterEmail = email.current.value;
     const enterPassword = password.current.value;
 
-    console.log('user enterEmail' , enterEmail);
-    console.log('user enterPassword' , enterPassword);
-    email.current.value = '';// 하나씩 전부 해야하는 번거로움 
+    const isInvalidEmail = !enterEmail.includes('@');
     
+    if(isInvalidEmail){
+      setEmailIsInvalid(true);
+      return;
+    }
+
+    setEmailIsInvalid(false);
+
+    console.log('Sending HTTP request...');
   }
 
   return (
@@ -25,7 +33,7 @@ export default function Login() {
           <label htmlFor="email">Email</label>
           <input id="email" type="email" name="email" ref={email}/>
           <div className="control-error">
-            {emailError && <p>{emailError}</p>}
+            {emailIsInvalid && <p>Please enter a valid email address.</p>}
           </div>
         </div>
 
