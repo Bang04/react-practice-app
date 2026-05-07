@@ -1,6 +1,12 @@
 import { lazy, Suspense, useMemo, useState } from 'react';
 
 const FEATURE_REGISTRY = [
+  {
+    id: 'formAction',
+    label: 'Form Action',
+    description: '',
+    loader: () => import('./features/form-action/FormApp.jsx'),
+  },
    {
     id: 'form',
     label: 'Form & Input',
